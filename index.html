@@ -1,27 +1,17 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="description" content="श्रीनाथ सुखदेई जूनियर हाई स्कूल (S.S. Junior High School), Sidhawan, Pachwal, Uttar Pradesh. Quality education from Nursery to Class 8th.">
-
-<meta name="keywords" content="S.S. Junior High School, Shrinath Sukhdei Junior High School, Sidhawan, Pachwal, UP Board, School, Education">
-
-<meta name="author" content="श्रीनाथ सुखदेई जूनियर हाई स्कूल">
+<meta name="description" content="श्रीनाथ सुखदेई जूनियर हाई स्कूल (S.S. Junior High School), Sidhawan, Pachwal, Jaunpur, Uttar Pradesh.">
+<meta name="keywords" content="S.S. Junior High School, श्रीनाथ सुखदेई जूनियर हाई स्कूल, Sidhawan, Pachwal, Jaunpur, UP Board">
+<meta name="author" content="S.S. Junior High School">
 
 <title>श्रीनाथ सुखदेई जूनियर हाई स्कूल | S.S. Junior High School</title>
 
-
 <style>
-
-/* =========================================================
-   GLOBAL
-========================================================= */
 
 * {
     margin: 0;
@@ -30,38 +20,55 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 body {
     background-color: #f8f9fa;
     color: #333;
     line-height: 1.6;
 }
 
-
-/* =========================================================
-   HEADER
-========================================================= */
+/* ================= HEADER ================= */
 
 header {
     background: linear-gradient(135deg, #0d47a1, #1976d2);
     color: #fff;
-    padding: 22px 15px;
+    padding: 25px 15px;
     text-align: center;
 }
 
 header h1 {
-    font-size: 2.2rem;
+    font-size: 2.7rem;
     letter-spacing: 1px;
+    font-weight: 800;
     text-transform: uppercase;
+    line-height: 1.25;
+}
+
+.school-hindi-name {
+    font-size: 2.4rem;
+    font-weight: 800;
+    margin-bottom: 8px;
+    line-height: 1.3;
+}
+
+.school-english-name {
+    font-size: 2.5rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    line-height: 1.2;
+}
+
+.school-location {
+    font-size: 1.05rem;
+    color: #e3f2fd;
+    margin-top: 8px;
+    font-weight: 500;
 }
 
 header p {
     font-size: 1.1rem;
     color: #ffeb3b;
-    margin-top: 5px;
+    margin-top: 8px;
     font-style: italic;
 }
 
@@ -72,127 +79,125 @@ header p {
     border-radius: 5px;
     font-size: 0.85rem;
     display: inline-block;
-    margin-top: 8px;
+    margin-top: 10px;
     font-weight: bold;
 }
 
-
-/* =========================================================
-   NAVIGATION
-========================================================= */
+/* ================= NAVIGATION ================= */
 
 nav {
     background-color: #0d1b2a;
     display: flex;
     justify-content: center;
-    align-items: center;
+    flex-wrap: wrap;
     padding: 12px;
     position: sticky;
     top: 0;
-    z-index: 1000;
-    flex-wrap: wrap;
+    z-index: 100;
 }
 
 nav a {
     color: white;
     text-decoration: none;
-    margin: 4px 15px;
+    margin: 5px 15px;
     font-weight: 600;
     font-size: 0.95rem;
-    transition: 0.3s;
+    transition: color 0.3s;
 }
 
 nav a:hover {
     color: #ffeb3b;
 }
 
-
-/* =========================================================
-   SCHOOL IMAGE AUTO SCROLLING SLIDER
-   ONLY SCHOOL IMAGES WILL SCROLL
-========================================================= */
+/* ================= SCHOOL IMAGE SLIDER ================= */
 
 .school-slider {
     width: 100%;
     max-width: 1200px;
-    height: 400px;
-    margin: 0 auto;
+    margin: 20px auto;
     overflow: hidden;
     position: relative;
-    background: #111;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.10);
 }
 
 .school-slider-track {
     display: flex;
-    width: 300%;
-    height: 100%;
-    animation: schoolRoll 15s infinite ease-in-out;
+    width: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+
+.school-slider-track::-webkit-scrollbar {
+    display: none;
 }
 
 .school-slide {
-    width: 33.333333%;
-    height: 100%;
-    flex-shrink: 0;
-    position: relative;
-    overflow: hidden;
+    flex: 0 0 100%;
+    width: 100%;
+    min-height: 400px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #ffffff;
+    padding: 10px;
+
+    box-sizing: border-box;
 }
 
 .school-slide img {
-    width: 100%;
-    height: 100%;
     display: block;
-    object-fit: cover;
+    width: 100%;
+    max-width: 1100px;
+    height: 390px;
+    object-fit: contain;
+    border-radius: 8px;
 }
 
+/* Slider Buttons */
 
-/* Dark overlay */
-
-.school-slide::after {
-    content: "";
+.slider-btn {
     position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,0.18);
-    pointer-events: none;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+
+    width: 42px;
+    height: 42px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: rgba(0,0,0,0.55);
+    color: white;
+
+    font-size: 25px;
+    cursor: pointer;
 }
 
-
-/* School slider animation */
-
-@keyframes schoolRoll {
-
-    0%, 28% {
-        transform: translateX(0);
-    }
-
-    33%, 61% {
-        transform: translateX(-33.333333%);
-    }
-
-    66%, 94% {
-        transform: translateX(-66.666666%);
-    }
-
-    100% {
-        transform: translateX(0);
-    }
-
+.slider-btn:hover {
+    background: rgba(0,0,0,0.85);
 }
 
+.slider-prev {
+    left: 12px;
+}
 
-/* =========================================================
-   MAIN CONTAINER
-========================================================= */
+.slider-next {
+    right: 12px;
+}
+
+/* ================= CONTAINER ================= */
 
 .container {
     max-width: 1100px;
     margin: 30px auto;
     padding: 0 20px;
 }
-
-
-/* =========================================================
-   SECTION TITLE
-========================================================= */
 
 .section-title {
     text-align: center;
@@ -210,96 +215,99 @@ nav a:hover {
     margin: 8px auto 0;
 }
 
+/* ================= CARDS ================= */
 
-/* =========================================================
-   ABOUT
-========================================================= */
-
-.about-section {
-    text-align: center;
-    margin-bottom: 45px;
-}
-
-.about-section p {
-    max-width: 800px;
-    margin: 0 auto;
-    color: #555;
-    font-size: 16px;
-}
-
-
-/* =========================================================
-   MANAGEMENT
-   FIXED - NO SCROLLING
-========================================================= */
-
-.management-section {
-    margin-bottom: 50px;
-}
-
-.management-grid {
+.grid-2 {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 25px;
-    max-width: 850px;
-    margin: 0 auto;
+    margin-bottom: 40px;
 }
 
-.management-card {
+.card {
     background: white;
-    padding: 25px 20px;
-    border-radius: 12px;
+    padding: 25px;
+    border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     border-top: 4px solid #1976d2;
     text-align: center;
 }
 
-.management-photo-box {
-    width: 180px;
-    height: 180px;
-    margin: 0 auto 15px;
+.profile-img {
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
-    overflow: hidden;
-    border: 5px solid #1f4e79;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-}
-
-.management-photo {
-    width: 100%;
-    height: 100%;
     object-fit: cover;
-    display: block;
+    border: 3px solid #1976d2;
+    margin-bottom: 15px;
 }
 
-.management-name {
-    color: #1f4e79;
-    font-size: 22px;
-    font-weight: bold;
-    margin: 10px 0 5px;
+.card h3 {
+    color: #0d47a1;
+    margin-bottom: 5px;
 }
 
-.management-designation {
+.card h4 {
     color: #d32f2f;
-    font-size: 15px;
-    font-weight: bold;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
     text-transform: uppercase;
 }
 
+/* ================= MANAGEMENT ================= */
+
+.management-section {
+    margin: 35px auto;
+    text-align: center;
+}
+
+.management-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 35px;
+    max-width: 850px;
+    margin: auto;
+}
+
+.management-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.10);
+    border-top: 5px solid #1f4e79;
+    text-align: center;
+}
+
+.management-photo {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #1f4e79;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.20);
+}
+
+.management-name {
+    margin: 15px 0 5px;
+    color: #1f4e79;
+    font-size: 23px;
+    font-weight: bold;
+}
+
+.management-designation {
+    color: #555;
+    font-size: 16px;
+    font-weight: 700;
+}
+
 .management-slogan {
+    margin-top: 10px;
     color: #777;
     font-size: 14px;
     font-style: italic;
-    margin-top: 10px;
 }
 
-
-/* =========================================================
-   FACILITIES
-========================================================= */
-
-.facilities-section {
-    margin-bottom: 50px;
-}
+/* ================= FACILITIES ================= */
 
 .facilities-grid {
     display: grid;
@@ -319,22 +327,13 @@ nav a:hover {
     border-left: 4px solid #27ae60;
 }
 
-
-/* =========================================================
-   FACULTY AUTO SCROLLING
-   ONLY FACULTY WILL SCROLL
-========================================================= */
-
-.faculty-section {
-    margin-bottom: 50px;
-}
+/* ================= FACULTY SLIDER ================= */
 
 .faculty-slider {
     width: 100%;
     max-width: 1000px;
-    margin: 0 auto;
+    margin: 30px auto;
     overflow: hidden;
-    background: transparent;
 }
 
 .faculty-track {
@@ -357,26 +356,17 @@ nav a:hover {
     width: 100%;
 }
 
-.faculty-photo-box {
-    flex: 0 0 280px;
-    width: 280px;
-    height: 280px;
-}
-
 .faculty-photo {
     width: 280px;
     height: 280px;
     object-fit: cover;
     border-radius: 50%;
-    border: 5px solid #ffffff;
+    border: 5px solid white;
     box-shadow: 0 4px 15px rgba(0,0,0,0.20);
-    display: block;
 }
 
 .faculty-info {
     flex: 1;
-    min-width: 0;
-    padding: 20px 10px;
 }
 
 .faculty-name {
@@ -393,8 +383,7 @@ nav a:hover {
 
     font-size: 32px;
     font-weight: 700;
-    line-height: 1.2;
-    margin: 10px 0 8px;
+    margin-bottom: 8px;
 }
 
 .faculty-designation {
@@ -405,15 +394,14 @@ nav a:hover {
     font-size: 15px;
     font-weight: bold;
     letter-spacing: 0.5px;
-    margin: 5px 0 18px;
     padding: 7px 18px;
+    margin-bottom: 18px;
 }
 
 .faculty-description {
     color: #444;
     font-size: 17px;
     line-height: 1.7;
-    margin: 10px 0 15px;
 }
 
 .faculty-quote-box {
@@ -429,12 +417,7 @@ nav a:hover {
     font-size: 17px;
     font-style: italic;
     font-weight: 600;
-    margin: 0;
-    line-height: 1.5;
 }
-
-
-/* Faculty animation */
 
 @keyframes facultyRoll {
 
@@ -452,40 +435,7 @@ nav a:hover {
 
 }
 
-
-/* =========================================================
-   CONTACT
-========================================================= */
-
-.contact-section {
-    margin-bottom: 45px;
-}
-
-.contact-card {
-    background: white;
-    padding: 25px;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    border-top: 4px solid #1976d2;
-    text-align: left;
-    max-width: 650px;
-    margin: 0 auto;
-}
-
-.contact-card p {
-    margin: 8px 0;
-}
-
-.contact-card a {
-    color: #1565c0;
-    font-weight: 600;
-    text-decoration: none;
-}
-
-
-/* =========================================================
-   AUDIO CONTROL
-========================================================= */
+/* ================= AUDIO ================= */
 
 .audio-control {
     position: fixed;
@@ -498,30 +448,27 @@ nav a:hover {
     display: flex;
     align-items: center;
     gap: 10px;
-    z-index: 2000;
+    z-index: 1000;
 }
 
 .audio-control button {
     background: #1976d2;
     color: white;
     border: none;
-    padding: 7px 14px;
+    padding: 6px 14px;
     border-radius: 15px;
     cursor: pointer;
     font-weight: bold;
     font-size: 0.8rem;
 }
 
-
-/* =========================================================
-   FOOTER
-========================================================= */
+/* ================= FOOTER ================= */
 
 footer {
     background: #0d1b2a;
     color: white;
     text-align: center;
-    padding: 22px 15px;
+    padding: 20px;
     font-size: 0.9rem;
 }
 
@@ -530,151 +477,97 @@ footer a {
     text-decoration: none;
 }
 
+/* ================= MOBILE ================= */
 
-/* =========================================================
-   TABLET
-========================================================= */
+@media (max-width: 700px) {
 
-@media (max-width: 800px) {
+    header {
+        padding: 20px 10px;
+    }
+
+    .school-hindi-name {
+        font-size: 1.75rem;
+    }
+
+    .school-english-name {
+        font-size: 1.9rem;
+        letter-spacing: 1px;
+    }
+
+    .school-location {
+        font-size: 0.9rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    .school-slide {
+        min-height: 280px;
+        padding: 8px;
+    }
+
+    .school-slide img {
+        height: 270px;
+        object-fit: contain;
+    }
+
+    .slider-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 20px;
+    }
 
     .management-grid {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
+    }
+
+    .management-photo {
+        width: 170px;
+        height: 170px;
     }
 
     .faculty-card {
-        gap: 20px;
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
     }
 
-    .faculty-photo-box,
     .faculty-photo {
         width: 220px;
         height: 220px;
     }
 
-    .faculty-photo-box {
-        flex: 0 0 220px;
-    }
-
-    .faculty-name {
-        font-size: 27px;
-    }
-
-}
-
-
-/* =========================================================
-   MOBILE
-========================================================= */
-
-@media (max-width: 600px) {
-
-    header h1 {
-        font-size: 1.65rem;
-    }
-
-    header p {
-        font-size: 0.95rem;
-    }
-
-    nav {
-        padding: 10px 5px;
-    }
-
-    nav a {
-        margin: 3px 7px;
-        font-size: 0.82rem;
-    }
-
-    .school-slider {
-        height: 260px;
-    }
-
-    .container {
-        padding: 0 12px;
-    }
-
-
-    /* Management fixed */
-
-    .management-grid {
-        grid-template-columns: 1fr;
-        max-width: 400px;
-    }
-
-    .management-card {
-        padding: 22px 15px;
-    }
-
-
-    /* Faculty mobile */
-
-    .faculty-slide {
-        padding: 20px 10px;
-    }
-
-    .faculty-card {
-        flex-direction: column;
-        gap: 10px;
-        text-align: center;
-    }
-
-    .faculty-photo-box {
-        flex: none;
-        width: 210px;
-        height: 210px;
-    }
-
-    .faculty-photo {
-        width: 210px;
-        height: 210px;
-    }
-
     .faculty-info {
         width: 100%;
-        padding: 10px 5px;
     }
 
     .faculty-name {
-        font-size: 27px;
+        font-size: 28px;
     }
 
     .faculty-description {
         font-size: 16px;
     }
 
-    .faculty-quote {
-        font-size: 15px;
-    }
-
-
-    /* Audio */
-
-    .audio-control {
-        bottom: 10px;
-        right: 10px;
-        padding: 8px 12px;
-    }
-
-    .audio-control span {
-        font-size: 0.72rem !important;
-    }
-
 }
-
-
-/* =========================================================
-   SMALL MOBILE
-========================================================= */
 
 @media (max-width: 400px) {
 
-    .school-slider {
-        height: 230px;
+    .school-hindi-name {
+        font-size: 1.55rem;
     }
 
-    .faculty-photo-box {
-        width: 190px;
-        height: 190px;
+    .school-english-name {
+        font-size: 1.65rem;
+    }
+
+    .school-slide {
+        min-height: 240px;
+    }
+
+    .school-slide img {
+        height: 230px;
     }
 
     .faculty-photo {
@@ -683,50 +576,34 @@ footer a {
     }
 
     .faculty-name {
-        font-size: 24px;
-    }
-
-    .management-photo-box {
-        width: 170px;
-        height: 170px;
-    }
-
-}
-
-
-/* =========================================================
-   REDUCE MOTION ACCESSIBILITY
-========================================================= */
-
-@media (prefers-reduced-motion: reduce) {
-
-    .school-slider-track,
-    .faculty-track {
-        animation: none;
+        font-size: 25px;
     }
 
 }
 
 </style>
-
 </head>
-
 
 <body>
 
-
-<!-- =========================================================
-     HEADER
-========================================================= -->
+<!-- ================= HEADER ================= -->
 
 <header>
 
-    <h1>
+    <div class="school-hindi-name">
         श्रीनाथ सुखदेई जूनियर हाई स्कूल
-    </h1>
+    </div>
+
+    <div class="school-english-name">
+        S.S. JUNIOR HIGH SCHOOL
+    </div>
+
+    <div class="school-location">
+        Sidhawan, Pachwal, Jaunpur, Uttar Pradesh
+    </div>
 
     <p>
-        S.S. Junior High School
+        "Empowering Minds, Shaping Futures"
     </p>
 
     <span class="badge">
@@ -736,34 +613,26 @@ footer a {
 </header>
 
 
-<!-- =========================================================
-     NAVIGATION
-========================================================= -->
+<!-- ================= NAVIGATION ================= -->
 
 <nav>
-
     <a href="#about">About Us</a>
-
-    <a href="#management">Management</a>
-
+    <a href="#leadership">Leadership</a>
     <a href="#facilities">Facilities</a>
-
     <a href="#faculty">Faculty</a>
-
     <a href="#contact">Contact Us</a>
-
 </nav>
 
 
-<!-- =========================================================
-     SCHOOL IMAGE SLIDER
-     ONLY THIS IMAGE SECTION SCROLLS
-========================================================= -->
+<!-- ================= SCHOOL IMAGE AUTO SCROLL ================= -->
 
 <div class="school-slider">
 
-    <div class="school-slider-track">
+    <button class="slider-btn slider-prev" onclick="schoolSliderPrev()">
+        &#10094;
+    </button>
 
+    <div class="school-slider-track" id="schoolSliderTrack">
 
         <!-- SCHOOL IMAGE 1 -->
 
@@ -771,9 +640,8 @@ footer a {
 
             <img
                 src="https://blogger.googleusercontent.com/img/a/AVvXsEiLlAh-ONksg8jmKN1-6RNecN-Dz56RQAHEVAIr5HlUYdThq_XOEAGIuH4-qDR_zlp5avAqyGAEKcZQFzhMELFUBDXs4Hb9qZsrPtORbjAmvdUIoupq1H6qm_7PtqglW4S5PaeqpsC-B_ZtaC394wXCuOhAq3F3Le_QqyhJT__fq-Nn1vy6XtpsLToLDjTI=w1600"
-                alt="S.S. Junior High School"
-            />
-
+                alt="S.S. Junior High School">
+            
         </div>
 
 
@@ -783,9 +651,8 @@ footer a {
 
             <img
                 src="https://blogger.googleusercontent.com/img/a/AVvXsEhu11VQEELB2PZsiqBJONApC7Ko5-YfO0lbn5AnP8w0pBDZ2LouCxZnG1efeGDh7nsaBw2jn1OZKPswbMDgnV-igi9doZhARiq-VT9XpVabAoOEdYjdEsX9pbnBLS4JY9BpOXQylaX7ZyFbZRQwBROWyX3b8pcqFGf171NHlNZFTUI0vqSL7ipXC5Ff4-qw=s1600"
-                alt="S.S. Junior High School Campus"
-            />
-
+                alt="S.S. Junior High School">
+            
         </div>
 
 
@@ -795,364 +662,302 @@ footer a {
 
             <img
                 src="https://blogger.googleusercontent.com/img/a/AVvXsEhJlS7QJoLBMxreZIAcdZNaPAnv-P2YMmUI2u3pNIkeIKasZvZv3pkX4EFmg_ARWOM_1BQuCVD9eX2JbV6qbzkF9fterYoMwegavo7rLz50VyuOB16l1C006jjbhPL0SkIkhohvqxoLN-Odq-P5AmaZM1_hVqMyLfIPUhgmb-1x81yWb8COgM9tDf64xfdA=s1600"
-                alt="S.S. Junior High School"
-            />
-
+                alt="S.S. Junior High School">
+            
         </div>
-
 
     </div>
 
-</div>
-
-
-<!-- =========================================================
-     MAIN CONTENT
-========================================================= -->
-
-<div class="container">
-
-
-    <!-- =====================================================
-         ABOUT
-    ====================================================== -->
-
-    <section id="about" class="about-section">
-
-        <h2 class="section-title">
-            Welcome to Our School
-        </h2>
-
-        <p>
-            S.S. Junior High School provides a nurturing and inspiring
-            academic environment for students from Nursery to Class 8th.
-            Our focus is on holistic development, academic excellence,
-            and modern educational methodologies under the UP Board
-            curriculum.
-        </p>
-
-    </section>
-
-
-    <!-- =====================================================
-         MANAGEMENT
-         FIXED — NO SCROLLING
-    ====================================================== -->
-
-    <section id="management" class="management-section">
-
-        <h2 class="section-title">
-            School Management
-        </h2>
-
-
-        <div class="management-grid">
-
-
-            <!-- MANAGER -->
-
-            <div class="management-card">
-
-                <div class="management-photo-box">
-
-                    <img
-                        class="management-photo"
-                        src="https://blogger.googleusercontent.com/img/a/AVvXsEgnift9J1nVFCoKdrng8rLsb7uHxKCq_wNO8ccxaI9rYeOSbK_gXMfsPDOdxQpamTmPKCgCU9qbTwasiEj-Tu3uWVJ-wEzHDSH0AX2EGxulFple1RtXXpoODM1I2mSwWN8tWO_2nKg8Du8wqsgE0yRhkFgHg7A8OUE7H7UU355XSmLOugjbkCzKlsG5kc9I=w400-h400"
-                        alt="Jay Prakash Yadav - School Manager"
-                    />
-
-                </div>
-
-                <h3 class="management-name">
-                    Jay Prakash Yadav
-                </h3>
-
-                <div class="management-designation">
-                    School Manager
-                </div>
-
-                <p class="management-slogan">
-                    “Leading with Vision, Inspiring with Values.”
-                </p>
-
-            </div>
-
-
-            <!-- VICE PRINCIPAL -->
-
-            <div class="management-card">
-
-                <div class="management-photo-box">
-
-                    <img
-                        class="management-photo"
-                        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiJF53Yu_KbOkGAmc34jqChxuIwoyqiidV3nqTR1MiVbJX7008-KJWhL6yLMurKe4wrQa4zNcA1etf00IFVKpNSTu-vDiNq33OHbge1Ao60xydjP-9fB42g6ejyzwIp51zugmS99RuzG_7chtLuMuOe_epfJDs6TrDD1bt_Q4rV3ivHpCt9tkIaSNFYVEvy/w400-h400/1000285977.png"
-                        alt="Vidhan Chard Sir - Vice Principal"
-                    />
-
-                </div>
-
-                <h3 class="management-name">
-                    Vidhan Chard Sir
-                </h3>
-
-                <div class="management-designation">
-                    Vice Principal
-                </div>
-
-                <p class="management-slogan">
-                    “Leading with Vision, Inspiring with Excellence.”
-                </p>
-
-            </div>
-
-
-        </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         FACILITIES
-    ====================================================== -->
-
-    <section id="facilities" class="facilities-section">
-
-        <h2 class="section-title">
-            Key Facilities
-        </h2>
-
-
-        <div class="facilities-grid">
-
-            <div class="facility-card">
-                💻 Smart Classes
-            </div>
-
-            <div class="facility-card">
-                🔬 Science Lab
-            </div>
-
-            <div class="facility-card">
-                📚 School Library
-            </div>
-
-            <div class="facility-card">
-                ⚽ Sports Complex
-            </div>
-
-            <div class="facility-card">
-                🚌 Transport Facilities
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         FACULTY
-         ONLY FACULTY SCROLLS
-    ====================================================== -->
-
-    <section id="faculty" class="faculty-section">
-
-        <h2 class="section-title">
-            Our Faculty
-        </h2>
-
-
-        <div class="faculty-slider">
-
-            <div class="faculty-track">
-
-
-                <!-- =================================================
-                     MS. SANDHYA YADAV
-                ================================================== -->
-
-                <div class="faculty-slide">
-
-                    <div class="faculty-card">
-
-
-                        <!-- PHOTO -->
-
-                        <div class="faculty-photo-box">
-
-                            <img
-                                class="faculty-photo"
-                                src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhkhad4rsPX4kp9ecaLvqF2mdiqkXdq60QGRpsla87hZ3bnxPpduLABZuCMybpwBR012ZD-h3ZkEjgNvsmdIMxlsqxrP_vfM5j5BWTyhCcRWnRTjUx3wHBsmX1DGkRvYaytV9WF3zJ-H6smp7Kzu9quToUAjEKzNOqdOaj2yaKWV1Wqc2AzDdbnkO8bw40-/w400-h400/1000285947.png"
-                                alt="Ms. Sandhya Yadav - Faculty Member"
-                            />
-
-                        </div>
-
-
-                        <!-- INFORMATION -->
-
-                        <div class="faculty-info">
-
-                            <h2 class="faculty-name">
-                                Ms. Sandhya Yadav
-                            </h2>
-
-                            <div class="faculty-designation">
-                                FACULTY MEMBER
-                            </div>
-
-                            <p class="faculty-description">
-                                Dedicated to nurturing students with
-                                knowledge, discipline, confidence and
-                                values for a brighter future.
-                            </p>
-
-                            <div class="faculty-quote-box">
-
-                                <p class="faculty-quote">
-                                    “Quality Education, Strong Values,
-                                    Bright Future.”
-                                </p>
-
-                            </div>
-
-                        </div>
-
-
-                    </div>
-
-                </div>
-
-
-                <!-- =================================================
-                     MR. PRATIK KUMAR
-                ================================================== -->
-
-                <div class="faculty-slide">
-
-                    <div class="faculty-card">
-
-
-                        <!-- PHOTO -->
-
-                        <div class="faculty-photo-box">
-
-                            <img
-                                class="faculty-photo"
-                                src="https://blogger.googleusercontent.com/img/a/AVvXsEibx0jzWt-f6vVAK2U-Fe5Q_RvP4DXm8ptyKkASC8aRgVFmDYAwfuJHEaTC5UKbqHx6ScvRQhr5l61SWwjauTr6igzDU-w69P15TMM14fYSYdl2f_TQeClWiSwnSW_D_Zo51nfhNcUY9TNd1DOc8nS0bVwHwtAn_p983T-zdUN96QODBvt494mYkW88TOgE=w400-h400"
-                                alt="Mr. Pratik Kumar - Faculty Member"
-                            />
-
-                        </div>
-
-
-                        <!-- INFORMATION -->
-
-                        <div class="faculty-info">
-
-                            <h2 class="faculty-name">
-                                Mr. Pratik Kumar
-                            </h2>
-
-                            <div class="faculty-designation">
-                                FACULTY MEMBER
-                            </div>
-
-                            <p class="faculty-description">
-                                Dedicated to guiding students with
-                                knowledge, discipline, confidence and
-                                values for a brighter future.
-                            </p>
-
-                            <div class="faculty-quote-box">
-
-                                <p class="faculty-quote">
-                                    “Education Today, Success Tomorrow.”
-                                </p>
-
-                            </div>
-
-                        </div>
-
-
-                    </div>
-
-                </div>
-
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- =====================================================
-         CONTACT
-    ====================================================== -->
-
-    <section id="contact" class="contact-section">
-
-        <h2 class="section-title">
-            Contact & Location
-        </h2>
-
-
-        <div class="contact-card">
-
-            <p>
-                <strong>Address:</strong>
-                Sidhawan, Pachwal, Uttar Pradesh - 222203
-            </p>
-
-            <p>
-                <strong>Affiliation:</strong>
-                UP Board (Nursery to Class 8th)
-            </p>
-
-            <p>
-                <strong>Phone:</strong>
-
-                <a href="tel:8874311825">
-                    +91 8874311825
-                </a>,
-
-                <a href="tel:9653063675">
-                    +91 9653063675
-                </a>
-
-            </p>
-
-        </div>
-
-    </section>
-
-
-</div>
-
-
-<!-- =========================================================
-     AUDIO CONTROL
-========================================================= -->
-
-<div class="audio-control">
-
-    <span style="font-size:0.85rem;font-weight:bold;">
-        School Anthem
-    </span>
-
-    <button
-        id="audioBtn"
-        onclick="toggleAudio()">
-        Play Song
+    <button class="slider-btn slider-next" onclick="schoolSliderNext()">
+        &#10095;
     </button>
 
 </div>
 
 
-<!-- =========================================================
-     YOUTUBE AUDIO
-========================================================= -->
+<!-- ================= MAIN CONTAINER ================= -->
+
+<div class="container">
+
+
+<!-- ================= ABOUT ================= -->
+
+<section id="about" style="text-align:center; margin-bottom:40px;">
+
+    <h2 class="section-title">
+        Welcome to Our School
+    </h2>
+
+    <p style="max-width:800px; margin:0 auto; color:#555;">
+
+        S.S. Junior High School provides a nurturing and inspiring
+        academic environment for students from Nursery to Class 8th.
+        Our focus is on holistic development, academic excellence,
+        and modern educational methodologies under the UP Board curriculum.
+
+    </p>
+
+</section>
+
+
+<!-- ================= LEADERSHIP ================= -->
+
+<section id="leadership" class="management-section">
+
+    <h2 class="section-title">
+        School Leadership
+    </h2>
+
+    <div class="management-grid">
+
+
+        <!-- MANAGER -->
+
+        <div class="management-card">
+
+            <img
+                class="management-photo"
+                src="https://blogger.googleusercontent.com/img/a/AVvXsEgnift9J1nVFCoKdrng8rLsb7uHxKCq_wNO8ccxaI9rYeOSbK_gXMfsPDOdxQpamTmPKCgCU9qbTwasiEj-Tu3uWVJ-wEzHDSH0AX2EGxulFple1RtXXpoODM1I2mSwWN8tWO_2nKg8Du8wqsgE0yRhkFgHg7A8OUE7H7UU355XSmLOugjbkCzKlsG5kc9I=w400-h400"
+                alt="Jay Prakash Yadav - School Manager">
+
+            <h3 class="management-name">
+                Jay Prakash Yadav
+            </h3>
+
+            <div class="management-designation">
+                School Manager
+            </div>
+
+            <p class="management-slogan">
+                “Leading with Vision, Inspiring with Values.”
+            </p>
+
+        </div>
+
+
+        <!-- VICE PRINCIPAL -->
+
+        <div class="management-card">
+
+            <img
+                class="management-photo"
+                src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiJF53Yu_KbOkGAmc34jqChxuIwoyqiidV3nqTR1MiVbJX7008-KJWhL6yLMurKe4wrQa4zNcA1etf00IFVKpNSTu-vDiNq33OHbge1Ao60xydjP-9fB42g6ejyzwIp51zugmS99RuzG_7chtLuMuOe_epfJDs6TrDD1bt_Q4rV3ivHpCt9tkIaSNFYVEvy/w400-h400/1000285977.png"
+                alt="Vidhan Chard Sir - Vice Principal">
+
+            <h3 class="management-name">
+                Vidhan Chard Sir
+            </h3>
+
+            <div class="management-designation">
+                Vice Principal
+            </div>
+
+            <p class="management-slogan">
+                “Leading with Vision, Inspiring with Excellence.”
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FACILITIES ================= -->
+
+<section id="facilities">
+
+    <h2 class="section-title">
+        Key Facilities
+    </h2>
+
+    <div class="facilities-grid">
+
+        <div class="facility-card">
+            💻 Smart Classes
+        </div>
+
+        <div class="facility-card">
+            🔬 Science Lab
+        </div>
+
+        <div class="facility-card">
+            📚 School Library
+        </div>
+
+        <div class="facility-card">
+            ⚽ Sports Complex
+        </div>
+
+        <div class="facility-card">
+            🚌 Transport Facilities
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FACULTY ================= -->
+
+<section id="faculty">
+
+    <h2 class="section-title">
+        Our Faculty
+    </h2>
+
+
+    <div class="faculty-slider">
+
+        <div class="faculty-track">
+
+
+            <!-- SANDHYA YADAV -->
+
+            <div class="faculty-slide">
+
+                <div class="faculty-card">
+
+                    <img
+                        class="faculty-photo"
+                        src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhkhad4rsPX4kp9ecaLvqF2mdiqkXdq60QGRpsla87hZ3bnxPpduLABZuCMybpwBR012ZD-h3ZkEjgNvsmdIMxlsqxrP_vfM5j5BWTyhCcRWnRTjUx3wHBsmX1DGkRvYaytV9WF3zJ-H6smp7Kzu9quToUAjEKzNOqdOaj2yaKWV1Wqc2AzDdbnkO8bw40-/w400-h400/1000285947.png"
+                        alt="Ms. Sandhya Yadav - Faculty Member">
+
+
+                    <div class="faculty-info">
+
+                        <h2 class="faculty-name">
+                            Ms. Sandhya Yadav
+                        </h2>
+
+                        <div class="faculty-designation">
+                            FACULTY MEMBER
+                        </div>
+
+                        <p class="faculty-description">
+                            Dedicated to nurturing students with knowledge,
+                            discipline, confidence and values for a brighter future.
+                        </p>
+
+                        <div class="faculty-quote-box">
+
+                            <p class="faculty-quote">
+                                “Quality Education, Strong Values, Bright Future.”
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRATIK KUMAR -->
+
+            <div class="faculty-slide">
+
+                <div class="faculty-card">
+
+                    <img
+                        class="faculty-photo"
+                        src="https://blogger.googleusercontent.com/img/a/AVvXsEibx0jzWt-f6vVAK2U-Fe5Q_RvP4DXm8ptyKkASC8aRgVFmDYAwfuJHEaTC5UKbqHx6ScvRQhr5l61SWwjauTr6igzDU-w69P15TMM14fYSYdl2f_TQeClWiSwnSW_D_Zo51nfhNcUY9TNd1DOc8nS0bVwHwtAn_p983T-zdUN96QODBvt494mYkW88TOgE=w400-h400"
+                        alt="Mr. Pratik Kumar - Faculty Member">
+
+
+                    <div class="faculty-info">
+
+                        <h2 class="faculty-name">
+                            Mr. Pratik Kumar
+                        </h2>
+
+                        <div class="faculty-designation">
+                            FACULTY MEMBER
+                        </div>
+
+                        <p class="faculty-description">
+                            Dedicated to guiding students with knowledge,
+                            discipline, confidence and values for a brighter future.
+                        </p>
+
+                        <div class="faculty-quote-box">
+
+                            <p class="faculty-quote">
+                                “Education Today, Success Tomorrow.”
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section id="contact">
+
+    <h2 class="section-title">
+        Contact & Location
+    </h2>
+
+    <div class="card"
+         style="text-align:left; max-width:600px; margin:0 auto;">
+
+        <p>
+            <strong>Address:</strong>
+            Sidhawan, Pachwal, Uttar Pradesh - 222203
+        </p>
+
+        <p>
+            <strong>Affiliation:</strong>
+            UP Board (Nursery to Class 8th)
+        </p>
+
+        <p>
+            <strong>Phone:</strong>
+
+            <a href="tel:8874311825">
+                +91 8874311825
+            </a>,
+
+            <a href="tel:9653063675">
+                +91 9653063675
+            </a>
+
+        </p>
+
+    </div>
+
+</section>
+
+</div>
+
+
+<!-- ================= AUDIO ================= -->
+
+<div class="audio-control">
+
+    <span style="font-size:0.85rem; font-weight:bold;">
+        School Anthem
+    </span>
+
+    <button id="audioBtn" onclick="toggleAudio()">
+        Play Song
+    </button>
+
+</div>
+
 
 <iframe
     id="youtubeSong"
@@ -1162,38 +967,145 @@ footer a {
 </iframe>
 
 
-<!-- =========================================================
-     FOOTER
-========================================================= -->
+<!-- ================= FOOTER ================= -->
 
 <footer>
 
     <p>
-        &copy; 2026
-        श्रीनाथ सुखदेई जूनियर हाई स्कूल.
+        &copy; 2026 S.S. Junior High School.
         All Rights Reserved.
-    </p>
-
-    <p style="margin-top:5px;">
-        S.S. Junior High School | Sidhawan, Pachwal
     </p>
 
 </footer>
 
 
-<!-- =========================================================
-     AUDIO SCRIPT
-========================================================= -->
+<!-- ================= SCHOOL SLIDER SCRIPT ================= -->
 
 <script>
+
+(function () {
+
+    const slider =
+        document.getElementById("schoolSliderTrack");
+
+    const slides =
+        slider.querySelectorAll(".school-slide");
+
+    let currentSlide = 0;
+    let autoSlide;
+
+
+    function showSlide(index) {
+
+        if (index >= slides.length) {
+            currentSlide = 0;
+        }
+
+        if (index < 0) {
+            currentSlide = slides.length - 1;
+        }
+
+        slider.scrollTo({
+
+            left:
+            slider.clientWidth * currentSlide,
+
+            behavior: "smooth"
+
+        });
+
+    }
+
+
+    window.schoolSliderNext = function () {
+
+        currentSlide++;
+
+        if (currentSlide >= slides.length) {
+            currentSlide = 0;
+        }
+
+        showSlide(currentSlide);
+
+        restartAutoSlide();
+
+    };
+
+
+    window.schoolSliderPrev = function () {
+
+        currentSlide--;
+
+        if (currentSlide < 0) {
+            currentSlide = slides.length - 1;
+        }
+
+        showSlide(currentSlide);
+
+        restartAutoSlide();
+
+    };
+
+
+    function startAutoSlide() {
+
+        autoSlide = setInterval(function () {
+
+            currentSlide++;
+
+            if (currentSlide >= slides.length) {
+                currentSlide = 0;
+            }
+
+            showSlide(currentSlide);
+
+        }, 4000);
+
+    }
+
+
+    function restartAutoSlide() {
+
+        clearInterval(autoSlide);
+
+        startAutoSlide();
+
+    }
+
+
+    slider.addEventListener(
+        "mouseenter",
+        function () {
+            clearInterval(autoSlide);
+        }
+    );
+
+
+    slider.addEventListener(
+        "mouseleave",
+        function () {
+            startAutoSlide();
+        }
+    );
+
+
+    startAutoSlide();
+
+})();
+
+
+/* ================= AUDIO SCRIPT ================= */
 
 let isPlaying = false;
 
 function toggleAudio() {
 
-    const iframe = document.getElementById('youtubeSong');
+    const iframe =
+        document.getElementById("youtubeSong");
 
-    const btn = document.getElementById('audioBtn');
+    const btn =
+        document.getElementById("audioBtn");
+
 
     if (!isPlaying) {
 
@@ -1219,7 +1131,5 @@ function toggleAudio() {
 
 </script>
 
-
 </body>
 </html>
-```
