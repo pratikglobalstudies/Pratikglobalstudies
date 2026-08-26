@@ -1,70 +1,366 @@
-<!doctype html>
-<html lang="hi">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>S.S. Junior High School | Sidhwan, Rampur, Jaunpur</title>
-<meta name="description" content="S.S. Junior High School, Sidhwan, Rampur, Jaunpur">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Baloo+2:wght@500;600;700;800&display=swap" rel="stylesheet">
-<style>
-:root{--blue:#0b3d91;--blue2:#1565c0;--gold:#f5b400;--ink:#132238;--muted:#64748b;--bg:#f5f8fc;--white:#fff}
-*{box-sizing:border-box;scroll-behavior:smooth}body{margin:0;font-family:Poppins,sans-serif;color:var(--ink);background:var(--bg)}
-a{text-decoration:none;color:inherit}.top{background:#082c69;color:#fff;padding:9px 6%;display:flex;justify-content:space-between;gap:15px;font-size:13px;flex-wrap:wrap}.top a{color:#fff}
-nav{position:sticky;top:0;z-index:20;background:#fff;box-shadow:0 4px 18px #0b3d9115;padding:12px 6%;display:flex;align-items:center;justify-content:space-between}
-.brand{display:flex;align-items:center;gap:12px}.logo{width:54px;height:54px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(145deg,var(--gold),#fff);border:3px solid var(--blue);font-weight:800;color:var(--blue);font-size:13px;text-align:center}.brand b{display:block;color:var(--blue);font-size:16px}.brand span{font-size:11px;color:var(--muted)}
-.menu{display:flex;gap:24px;font-size:14px;font-weight:600}.menu a:hover{color:var(--blue2)}
-.hero{min-height:610px;display:grid;place-items:center;text-align:center;color:#fff;position:relative;overflow:hidden;background:linear-gradient(120deg,#062a65e8,#1260bde6),url('https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=1800&q=85') center/cover}
-.hero:after{content:"";position:absolute;inset:auto -5% -100px;height:180px;background:var(--bg);border-radius:50% 50% 0 0/100% 100% 0 0}
-.hero-content{max-width:900px;padding:90px 20px;position:relative;z-index:2}.tag{display:inline-block;background:#ffffff1c;border:1px solid #ffffff55;padding:8px 18px;border-radius:30px;font-size:13px}.hero h1{font-family:"Baloo 2";font-size:clamp(42px,7vw,78px);line-height:.98;margin:20px 0 12px}.hero h1 span{color:#ffd34d}.hero p{font-size:17px;max-width:650px;margin:0 auto 30px;color:#eaf2ff}.btn{display:inline-block;padding:13px 24px;border-radius:9px;font-weight:700;margin:5px;border:1px solid transparent}.primary{background:var(--gold);color:#10284d}.light{background:#fff;color:var(--blue)}section{padding:75px 6%}.heading{text-align:center;max-width:720px;margin:0 auto 45px}.heading .eyebrow{color:var(--blue2);font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase}.heading h2{font-size:34px;margin:8px 0}.heading p{color:var(--muted)}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;max-width:1120px;margin:auto}.card{background:#fff;border-radius:18px;padding:28px;box-shadow:0 10px 35px #173d6810;border:1px solid #e7edf5}.icon{width:52px;height:52px;border-radius:14px;background:#e8f1ff;color:var(--blue);display:grid;place-items:center;font-size:24px;margin-bottom:18px}.card h3{margin:0 0 8px}.card p{color:var(--muted);font-size:14px;line-height:1.8}
-.about{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;max-width:1120px;margin:auto}.about-img{min-height:390px;border-radius:25px;background:linear-gradient(135deg,#0b3d91aa,#0b3d9140),url('https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1000&q=85') center/cover;box-shadow:0 20px 50px #0b3d9120}.about h2{font-size:38px;margin:8px 0 15px}.about p{color:var(--muted);line-height:1.9}.ticks{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:22px}.ticks div{font-size:14px;font-weight:600}.ticks div:before{content:"✓";color:#0a8f5a;font-weight:900;margin-right:8px}
-.stats{background:#0b3d91;color:#fff}.statgrid{max-width:1000px;margin:auto;display:grid;grid-template-columns:repeat(4,1fr);text-align:center;gap:15px}.stat b{font-size:34px;display:block;color:#ffd34d}.stat span{font-size:13px;color:#dce8ff}
-.notice{max-width:1000px;margin:auto;background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 12px 35px #173d6810}.notice-row{padding:20px 25px;border-bottom:1px solid #edf1f6;display:flex;gap:18px;align-items:center}.date{background:#eaf1ff;color:var(--blue);padding:9px 12px;border-radius:9px;font-weight:800;font-size:12px}.notice-row:last-child{border:0}
-.contact{background:linear-gradient(135deg,#062a65,#1260b9);color:#fff}.contact-grid{max-width:1050px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:25px}.contact .box{background:#ffffff12;border:1px solid #ffffff20;border-radius:18px;padding:28px}.contact p{color:#dce8ff;line-height:1.8}.call{background:var(--gold);color:#11294d!important}
-footer{background:#061f49;color:#bcd0ee;padding:28px 6%;text-align:center;font-size:13px}
-@media(max-width:800px){.menu{display:none}.cards,.about,.contact-grid{grid-template-columns:1fr}.statgrid{grid-template-columns:1fr 1fr}.about-img{min-height:280px}.hero{min-height:570px}section{padding:58px 5%}.top{justify-content:center}.ticks{grid-template-columns:1fr}}
-</style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="S.S. Junior High School in Sidhawan, Pachwal, UP. Recognized UP Board school providing quality education from Nursery to Class 8th.">
+    <meta name="keywords" content="S.S. Junior High School, Sidhawan, Pachwal, UP Board, Smart Classes, Education, Uttar Pradesh">
+    <meta name="author" content="S.S. Junior High School">
+    <title>S.S. Junior High School | Sidhawan, Pachwal</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: linear-gradient(135deg, #0d47a1, #1976d2);
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            color: #ffeb3b;
+            margin-top: 5px;
+            font-style: italic;
+        }
+
+        .badge {
+            background-color: #d32f2f;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            display: inline-block;
+            margin-top: 8px;
+            font-weight: bold;
+        }
+
+        nav {
+            background-color: #0d1b2a;
+            display: flex;
+            justify-content: center;
+            padding: 12px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffeb3b;
+        }
+
+        /* Hero Image Slider */
+        .slider-container {
+            width: 100%;
+            max-height: 400px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .slides {
+            display: flex;
+            width: 300%;
+            height: 400px;
+            animation: slide 12s infinite;
+        }
+
+        .slide {
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+        }
+
+        @keyframes slide {
+            0% { transform: translateX(0%); }
+            30% { transform: translateX(0%); }
+            33% { transform: translateX(-33.33%); }
+            63% { transform: translateX(-33.33%); }
+            66% { transform: translateX(-66.66%); }
+            96% { transform: translateX(-66.66%); }
+            100% { transform: translateX(0%); }
+        }
+
+        /* Container & Cards */
+        .container {
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            color: #0d47a1;
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            width: 60px;
+            height: 3px;
+            background-color: #1976d2;
+            display: block;
+            margin: 8px auto 0;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            border-top: 4px solid #1976d2;
+            text-align: center;
+        }
+
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #1976d2;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            color: #0d47a1;
+            margin-bottom: 5px;
+        }
+
+        .card h4 {
+            color: #d32f2f;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        /* Facilities */
+        .facilities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+
+        .facility-card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: bold;
+            color: #0d1b2a;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            border-left: 4px solid #27ae60;
+        }
+
+        /* Audio Controls Floating Box */
+        .audio-control {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #ffffff;
+            padding: 10px 18px;
+            border-radius: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .audio-control button {
+            background: #1976d2;
+            color: white;
+            border: none;
+            padding: 6px 14px;
+            border-radius: 15px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 0.8rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #0d1b2a;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: #ffeb3b;
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
-<div class="top"><span>📍 Sidhwan, Rampur, Jaunpur, Uttar Pradesh</span><a href="tel:+919653063675">📞 9653063675</a></div>
-<nav>
-  <a class="brand" href="#home"><div class="logo">S.S.<br>JHS</div><div><b>S.S. Junior High School</b><span>Sidhwan • Rampur • Jaunpur</span></div></a>
-  <div class="menu"><a href="#home">Home</a><a href="#about">About</a><a href="#academics">Academics</a><a href="#notice">Notice</a><a href="#contact">Contact</a></div>
-  <a class="btn primary" href="tel:+919653063675">Call Now</a>
-</nav>
 
-<header class="hero" id="home"><div class="hero-content">
-  <span class="tag">WELCOME TO OUR SCHOOL</span>
-  <h1>Learn • Grow • <span>Shine</span></h1>
-  <p>ज्ञान, अनुशासन pratikऔर संस्कार के साथ बच्चों के उज्ज्वल भविष्य की ओर एक मजबूत कदम।</p>
-  <a class="btn primary" href="#about">Explore School</a><a class="btn light" href="#contact">Contact Us</a>
-</div></header>
+    <!-- Header Section -->
+    <header>
+        <h1>S.S. Junior High School</h1>
+        <p>"Empowering Minds, Shaping Futures"</p>
+        <span class="badge">Recognized by UP Board</span>
+    </header>
 
-<section id="about"><div class="about"><div class="about-img"></div><div>
-  <div class="heading" style="text-align:left;margin:0"><div class="eyebrow">About Our School</div><h2>जहाँ शिक्षा के साथ संस्कार भी मिलते हैं</h2></div>
-  <p>S.S. Junior High School, Sidhwan, Rampur, Jaunpur में विद्यार्थियों के लिए सीखने, अनुशासन और व्यक्तित्व विकास पर केंद्रित वातावरण तैयार किया गया है।</p>
-  <div class="ticks"><div>गुणवत्तापूर्ण शिक्षा</div><div>अनुशासन एवं संस्कार</div><div>विद्यार्थी विकास</div><div>सुरक्षित वातावरण</div></div>
-</div></div></section>
+    <!-- Navigation -->
+    <nav>
+        <a href="#about">About Us</a>
+        <a href="#leadership">Leadership</a>
+        <a href="#facilities">Facilities</a>
+        <a href="#contact">Contact Us</a>
+    </nav>
 
-<section id="academics"><div class="heading"><div class="eyebrow">Why Choose Us</div><h2>बच्चों के सर्वांगीण विकास पर फोकस</h2><p>विद्यालय की वेबसाइट के लिए ये प्रमुख highlights रखे गए हैं; वास्तविक school details बाद में आसानी से बदली जा सकती हैं।</p></div>
-<div class="cards">
-<div class="card"><div class="icon">📚</div><h3>Strong Academics</h3><p>पढ़ाई को सरल, रोचक और विद्यार्थी-केंद्रित बनाने पर जोर।</p></div>
-<div class="card"><div class="icon">🏆</div><h3>Activities & Skills</h3><p>खेल, रचनात्मक गतिविधियों और practical learning के माध्यम से आत्मविश्वास बढ़ाना।</p></div>
-<div class="card"><div class="icon">🌱</div><h3>Values & Discipline</h3><p>सम्मान, जिम्मेदारी, समय की पाबंदी और अच्छे संस्कारों को बढ़ावा देना।</p></div>
-</div></section>
+    <!-- Scrolling Image Banner (Slider) -->
+    <div class="slider-container">
+        <div class="slides">
+            <div class="slide" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1580582932707-520aed937b7b?q=80&w=1200');">
+                Welcome to S.S. Junior High School
+            </div>
+            <div class="slide" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=1200');">
+                Quality Education from Nursery to Class 8th
+            </div>
+            <div class="slide" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=1200');">
+                Smart Classes & Modern Labs
+            </div>
+        </div>
+    </div>
 
-<section class="stats"><div class="statgrid"><div class="stat"><b>01</b><span>Learning First</span></div><div class="stat"><b>100%</b><span>Student Focus</span></div><div class="stat"><b>6</b><span>Days a Week</span></div><div class="stat"><b>UP</b><span>Uttar Pradesh</span></div></div></section>
+    <div class="container">
+        <!-- About Section -->
+        <section id="about" style="text-align: center; margin-bottom: 40px;">
+            <h2 class="section-title">Welcome to Our School</h2>
+            <p style="max-width: 800px; margin: 0 auto; color: #555;">
+                S.S. Junior High School provides a nurturing and inspiring academic environment for students from Nursery to Class 8th. Our focus is on holistic development, academic excellence, and modern educational methodologies under the UP Board curriculum.
+            </p>
+        </section>
 
-<section id="notice"><div class="heading"><div class="eyebrow">School Updates</div><h2>Notice & Announcements</h2><p>यहाँ स्कूल के नए notices, holidays, परीक्षा और कार्यक्रम की जानकारी दिखाई जा सकती है।</p></div>
-<div class="notice">
-<div class="notice-row"><span class="date">NOTICE</span><div><b>विद्यालय की नवीनतम सूचना</b><br><small>नई सूचना यहाँ admin द्वारा जोड़ी जा सकती है।</small></div></div>
-<div class="notice-row"><span class="date">EVENT</span><div><b>School Events & Activities</b><br><small>कार्यक्रमों की तारीख और विवरण यहाँ प्रदर्शित होंगे।</small></div></div>
-<div class="notice-row"><span class="date">INFO</span><div><b>Admission / School Information</b><br><small>प्रवेश और आवश्यक जानकारी के लिए स्कूल से संपर्क करें।</small></div></div>
-</div></section>
+        <!-- Leadership Section -->
+        <section id="leadership">
+            <h2 class="section-title">School Leadership</h2>
+            <div class="grid-2">
+                <!-- Director Card -->
+                <div class="card">
+                    <img src="https://via.placeholder.com/120" alt="Jay Prakash Yadav" class="profile-img">
+                    <h3>Jay Prakash Yadav</h3>
+                    <h4>Director</h4>
+                    <p style="font-size: 0.9rem; color: #666;">
+                        "Our vision is to provide quality education and empower every child with knowledge, discipline, and strong moral values."
+                    </p>
+                </div>
 
-<section id="contact" class="contact"><div class="heading"><div class="eyebrow" style="color:#ffd34d">Get In Touch</div><h2>हमसे संपर्क करें</h2><p style="color:#dce8ff">स्कूल से संबंधित जानकारी के लिए नीचे दिए गए नंबर पर संपर्क करें।</p></div>
-<div class="contact-grid"><div class="box"><h3>📍 School Address</h3><p>S.S. Junior High School<br>Sidhwan, Rampur<br>Jaunpur, Uttar Pradesh, India</p></div>
-<div class="box"><h3>📞 Contact</h3><p>Phone: <strong>9653063675</strong></p><a class="btn call" href="tel:+919653063675">Call School</a></div></div></section>
-<footer>© 2026 S.S. Junior High School, Sidhwan, Rampur, Jaunpur. All Rights Reserved.</footer>
-</body></html>
+                <!-- Principal Card -->
+                <div class="card">
+                    <img src="https://via.placeholder.com/120" alt="Sneha Shriwastav" class="profile-img">
+                    <h3>Sneha Shriwastav</h3>
+                    <h4>Principal</h4>
+                    <p style="font-size: 0.9rem; color: #666;">
+                        "We are committed to fostering academic growth, curiosity, and creative learning in a safe and supportive environment."
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Facilities Section -->
+        <section id="facilities">
+            <h2 class="section-title">Key Facilities</h2>
+            <div class="facilities-grid">
+                <div class="facility-card">💻 Smart Classes</div>
+                <div class="facility-card">🔬 Science Lab</div>
+                <div class="facility-card">📚 School Library</div>
+                <div class="facility-card">⚽ Sports Complex</div>
+                <div class="facility-card">🚌 Transport Facilities</div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2 class="section-title">Contact & Location</h2>
+            <div class="card" style="text-align: left; max-width: 600px; margin: 0 auto;">
+                <p><strong>Address:</strong> Sidhawan, Pachwal, Uttar Pradesh - 222203</p>
+                <p><strong>Affiliation:</strong> UP Board (Nursery to Class 8th)</p>
+                <p><strong>Phone:</strong> <a href="tel:8874311825">+91 8874311825</a>, <a href="tel:9653063675">+91 9653063675</a></p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Audio Player Controller -->
+    <div class="audio-control">
+        <span style="font-size: 0.85rem; font-weight: bold;">School Anthem</span>
+        <button id="audioBtn" onclick="toggleAudio()">Play Song</button>
+    </div>
+
+    <!-- Embedded YouTube Audio Track -->
+    <iframe id="youtubeSong" 
+        src="https://www.youtube.com/embed/DMBq22mLGBI?enablejsapi=1&autoplay=1&mute=1&loop=1&playlist=DMBq22mLGBI" 
+        allow="autoplay" 
+        style="display:none;">
+    </iframe>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 S.S. Junior High School. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Audio Control Script -->
+    <script>
+        let isPlaying = false;
+        function toggleAudio() {
+            const iframe = document.getElementById('youtubeSong');
+            const btn = document.getElementById('audioBtn');
+            if (!isPlaying) {
+                iframe.src = "https://www.youtube.com/embed/DMBq22mLGBI?autoplay=1&mute=0&loop=1&playlist=DMBq22mLGBI";
+                btn.innerText = "Mute Song";
+                isPlaying = true;
+            } else {
+                iframe.src = "https://www.youtube.com/embed/DMBq22mLGBI?autoplay=1&mute=1&loop=1&playlist=DMBq22mLGBI";
+                btn.innerText = "Play Song";
+                isPlaying = false;
+            }
+        }
+    </script>
+</body>
+</html>
