@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PGS | Government Competitive Exams</title>
+<meta name="description" content="Pratik Global Studies government competitive exam preparation, Railway, SSC and other exams.">
+<style>
+
+:root {
+  --blue: #0d47a1;
+  --light-blue: #1976d2;
+  --dark: #0d1b2a;
+  --yellow: #ffeb3b;
+  --red: #d32f2f;
+  --white: #ffffff;
+  --light: #f4f7fb;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #222;
+  background: var(--light);
+}
+
+a {
+  text-decoration: none;
+}
+
+header {
+  background: var(--blue);
+  color: white;
+  padding: 15px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.school-logo h1 {
+  font-size: 25px;
+}
+
+.school-logo p {
+  font-size: 13px;
+  color: var(--yellow);
+}
+
+nav {
+  background: var(--dark);
+  padding: 12px 5%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 22px;
+}
+
+nav a {
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+nav a:hover {
+  color: var(--yellow);
+}
+
+.hero {
+  background: linear-gradient(120deg, #0d47a1, #1976d2);
+  color: white;
+  text-align: center;
+  padding: 55px 20px;
+}
+
+.hero h2 {
+  font-size: 34px;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  max-width: 700px;
+  margin: auto;
+}
+
+.recognized {
+  display: inline-block;
+  background: var(--yellow);
+  color: #222;
+  padding: 7px 18px;
+  border-radius: 20px;
+  font-weight: bold;
+  margin-top: 18px;
+}
+
+.slider {
+  max-width: 1100px;
+  margin: 25px auto;
+  padding: 0 15px;
+  position: relative;
+}
+
+.slider img {
+  width: 100%;
+  height: 430px;
+  object-fit: cover;
+  border-radius: 12px;
+  display: none;
+}
+
+.slider img.active {
+  display: block;
+}
+
+.slider-btn {
+  position: absolute;
+  top: 45%;
+  background: rgba(0,0,0,.65);
+  color: white;
+  border: none;
+  padding: 12px 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+.prev {
+  left: 25px;
+}
+
+.next {
+  right: 25px;
+}
+
+section {
+  padding: 45px 6%;
+  scroll-margin-top: 20px;
+}
+
+.section-title {
+  text-align: center;
+  color: var(--blue);
+  font-size: 28px;
+  margin-bottom: 25px;
+}
+
+.about {
+  background: white;
+  text-align: center;
+}
+
+.about p {
+  max-width: 850px;
+  margin: auto;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  padding: 22px;
+  border-radius: 12px;
+  box-shadow: 0 3px 12px rgba(0,0,0,.08);
+  text-align: center;
+}
+
+.card h3 {
+  color: var(--blue);
+  margin-bottom: 8px;
+}
+
+.person-card {
+  background: white;
+  text-align: center;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 3px 12px rgba(0,0,0,.08);
+}
+
+.person-card img {
+  width: 145px;
+  height: 145px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 12px;
+}
+
+.person-card h3 {
+  color: var(--blue);
+}
+
+.contact {
+  background: white;
+  text-align: center;
+}
+
+.contact p {
+  margin: 8px;
+}
+
+.contact a {
+  color: var(--blue);
+  font-weight: bold;
+}
+
+/* PGS COURSES */
+
+.pgs-section {
+  background: #eef4ff;
+}
+
+.pgs-heading {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.pgs-heading h2 {
+  color: var(--blue);
+  font-size: 32px;
+}
+
+.pgs-heading p {
+  color: #555;
+}
+
+.pgs-brand {
+  background: linear-gradient(120deg, #0d1b2a, #0d47a1);
+  color: white;
+  text-align: center;
+  padding: 35px 15px;
+  border-radius: 14px;
+  margin-bottom: 30px;
+}
+
+.pgs-brand h2 {
+  font-size: 30px;
+  color: var(--yellow);
+}
+
+.course-category {
+  margin: 35px 0 18px;
+  color: var(--blue);
+  border-left: 5px solid var(--yellow);
+  padding-left: 12px;
+}
+
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 18px;
+}
+
+.course-card {
+  background: white;
+  border-radius: 12px;
+  padding: 22px 16px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,.08);
+  border-top: 4px solid var(--light-blue);
+}
+
+.course-card h3 {
+  color: var(--blue);
+  margin-bottom: 8px;
+}
+
+.course-card p {
+  color: #555;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.enroll-btn {
+  display: inline-block;
+  border: none;
+  background: #128c45;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.enroll-btn:hover {
+  background: #086b32;
+}
+
+.course-action {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.inquiry-btn {
+  display: inline-block;
+  background: #128c45;
+  color: white;
+  padding: 10px 14px;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.inquiry-btn:hover {
+  background: #086b32;
+}
+
+.competitive-section {
+  background: #ffffff;
+}
+
+.exam-intro {
+  max-width: 850px;
+  margin: 0 auto 25px;
+  text-align: center;
+  color: #555;
+}
+
+.exam-category {
+  margin: 30px 0 16px;
+  color: var(--blue);
+  border-left: 5px solid var(--yellow);
+  padding-left: 12px;
+}
+
+.exam-card {
+  background: #f4f7fb;
+  border-radius: 12px;
+  padding: 20px 16px;
+  text-align: center;
+  box-shadow: 0 3px 12px rgba(0,0,0,.07);
+  border-top: 4px solid var(--light-blue);
+}
+
+.exam-card h3 {
+  color: var(--blue);
+  margin-bottom: 8px;
+}
+
+.exam-card p {
+  color: #555;
+  font-size: 14px;
+  margin-bottom: 14px;
+}
+
+.exam-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.material-btn {
+  display: inline-block;
+  background: var(--blue);
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.material-btn:hover {
+  background: #083579;
+}
+
+.whatsapp-main {
+  display: inline-block;
+  background: #128c45;
+  color: white;
+  padding: 12px 22px;
+  border-radius: 7px;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+footer {
+  background: var(--dark);
+  color: white;
+  text-align: center;
+  padding: 25px 15px;
+}
+
+footer a {
+  color: var(--yellow);
+}
+
+@media(max-width: 600px) {
+  header {
+    justify-content: center;
+    text-align: center;
+  }
+
+  nav {
+    gap: 13px;
+  }
+
+  nav a {
+    font-size: 12px;
+  }
+
+  .hero h2 {
+    font-size: 25px;
+  }
+
+  .slider img {
+    height: 240px;
+  }
+
+  .section-title {
+    font-size: 24px;
+  }
+
+  .pgs-heading h2 {
+    font-size: 25px;
+  }
+}
+
+.portal-top{background:#0d1b2a;padding:12px 5%;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.portal-top a{color:#fff;font-weight:bold;text-decoration:none}
+body{background:#f4f7fb}
+.competitive-section{display:block!important;margin:0 auto;max-width:1200px;padding:30px 5%}
+</style>
+</head>
+<body>
+<div class="portal-top"><a href="../">← PGS Main Home</a><span style="color:#fff;font-weight:bold">PRATIK GLOBAL STUDIES</span></div>
+<section class="competitive-section" id="competitive">
+  <div class="pgs-brand">
+    <h2>PRATIK GLOBAL STUDIES</h2>
+    <p>PGS | Government Competitive Exam Preparation</p>
+    <p>Railway, SSC, Banking and Other Government Exams</p>
+  </div>
+
+  <div class="pgs-heading">
+    <h2>Government Competitive Exams</h2>
+    <p>Easy Explanation | Study Material | Practice Questions | Exam Preparation</p>
+  </div>
+
+  <p class="exam-intro">
+    Choose your target examination and contact PGS on WhatsApp for course details,
+    study material, classes and practice sets.
+  </p>
+
+  <h2 class="exam-category">Railway Recruitment Board (RRB) Exams</h2>
+  <div class="course-grid">
+    <div class="exam-card">
+      <h3>RRB NTPC</h3>
+      <p>Graduate and Undergraduate Level Railway Exam Preparation</p>
+      <div class="exam-actions">
+        <button class="material-btn" onclick="openExamMaterial('RRB NTPC')">Study Material</button>
+        <a class="inquiry-btn" href="https://wa.me/919653063675?text=Hello%20PGS%2C%20I%20want%20details%20about%20RRB%20NTPC%20preparation." target="_blank" rel="noopener">WhatsApp Enquiry</a>
+      </div>
+    </div>
+    <div class="exam-card">
+      <h3>RRB Group D</h3>
+      <p>General Science, Mathematics, Reasoning and General Awareness</p>
+      <div class="exam-actions">
+        <button class="material-btn" onclick="openExamMaterial('RRB Group D')">Study Material</button>
+        <a class="inquiry-btn" href="https://wa.me/919653063675?text=Hello%20PGS%2C%20I%20want%20details%20about%20RRB%20Group%20D%20preparation." target="_blank" rel="noopener">WhatsApp Enquiry</a>
+      </div>
+    </div>
+    <div class="exam-card">
+      <h3>RRB ALP</h3>
+      <p>Assistant Loco Pilot Exam Preparation</p>
+      <div class="exam-actions">
+        <button class="material-btn" onclick="openExamMaterial('RRB ALP')">Study Material</button>
+        <a class="inquiry-btn" href="https://wa.me/919653063675?text=Hello%20PGS%2C%20I%20want%20details%20about%20RRB%20ALP%20preparation." target="_blank" rel="noopener">WhatsApp Enquiry</a>
+      </div>
+    </div>
+    <div class="exam-card">
+      <h3>RRB Technician</h3>
+      <p>Technician Recruitment Exam Preparation</p>
+      <div class="exam-actions">
+        <button class="material-btn" onclick="openExamMaterial('RRB Technician')">Study Material</button>
+        <a class="inquiry-btn" href="https://wa.me/919653063675?text=Hello%20PGS%2C%20I%20want%20details%20about%20RRB%20Technician%20preparation." target="_blank" rel="noopener">WhatsApp Enquiry</a>
+      </div>
+    </div>
+    <div class="exam-card">
+      <h3>RRB JE</h3>
+      <p>Junior Engineer Recruitment Exam Preparation</p>
+      <div class="exam-actions">
+        <button class="material-btn" onclick="openExamMaterial('RRB JE')">Study Material</button>
+        <a class="inquiry-btn" href="https://wa.me/919653063675?text=Hello%20PGS%2C%20I%20want%20details%20about%20RRB%20JE%20preparation." target="_blank" rel="noopener">WhatsApp Enquiry</a>
+      </div>
+    </div>
+    <div class="exam-card">
+      <h3>RPF Constable / SI</h3>
+      <p>Railway Protection Force Recruitment Exam Preparation</p>
+      <div class="exam-actions">
+        <button class="material-btn" onclick="openExamMaterial('RPF Constable / SI')">Study Material</button>
+        <a class="inquiry-btn" href="https://wa.me/919653063675?text=Hello%20PGS%2C%20I%20want%20details%20about%20RPF%20exam%20preparation." target="_blank" rel="noopener">WhatsApp Enquiry</a>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="exam-category">SSC Exams</h2>
+  <div class="course-grid">
+    <div class="exam-card">
+      <h3>SSC CGL</h3>
+      <p>Combined Graduate Level Exam Preparation</p>
+      <div class="exam-actions">
+        <button class="material-btn" onclick="openExamMaterial('SSC CGL')">Study Material</button>
+        <a class="inquiry-btn" href="https://wa.me/919653063675?text=Hello%20PGS%2C%20I%20want%20details%20about%20SSC%20CGL%20preparation." target="_blank" rel="noopener">WhatsApp Enquiry</a>
+      </div>
+    </div>
+    <div class="exam-card">
+      <h3>SSC CHSL</h3>
+      <p>Combined Higher Secondary Level Exam Preparation</p>
+      <div class="exam-actions">
+        <button class="material-btn" onclick="openExamMaterial('SSC CHSL')">Study Material</button>
+        <a class="inquiry-btn" href="https://wa.me/919653063675?text=Hello%20PGS%2C%20I%20want%20details%20about%20SSC%20CHSL%20preparation." target="_blank" rel="noopener">WhatsApp Enquiry</a>
+      </div>
+    </div>
+    <div class="exam-card">
+      <h3>SSC MTS</h3>
+      <p>Multi-Tasking Staff Exam Preparation</p>
+      <div class="exam-actions">
+        <button class="material-btn" onclick="openExamMaterial('SSC MTS')">Study Material</button>
+        <a class="inquiry-btn" href="https://wa.me/919653063675?text=Hello%20PGS%2C%20I%20want%20details%20about%20SSC%20MTS%20preparation." target="_blank" rel="noopener">WhatsApp Enquiry</a>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="exam-category">Other Government Exams</h2>
+  <div class="course-grid">
+    <div class="exam-card">
+      <h3>Banking Exams</h3>
+      <p>IBPS, SBI and other banking recruitment exams</p>
+      <div class="exam-actions">
+        <button class="material-btn" onclick="openExamMaterial('Banking Exams')">Study Material</button>
+        <a class="inquiry-btn" href="https://wa.me/919653063675?text=Hello%20PGS%2C%20I%20want%20details%20about%20Banking%20exam%20preparation." target="_blank" rel="noopener">WhatsApp Enquiry</a>
+      </div>
+    </div>
+    <div class="exam-card">
+      <h3>UP Government Exams</h3>
+      <p>UPSSSC PET, Lekhpal and other state-level recruitment exams</p>
+      <div class="exam-actions">
+        <button class="material-btn" onclick="openExamMaterial('UP Government Exams')">Study Material</button>
+        <a class="inquiry-btn" href="https://wa.me/919653063675?text=Hello%20PGS%2C%20I%20want%20details%20about%20UP%20government%20exam%20preparation." target="_blank" rel="noopener">WhatsApp Enquiry</a>
+      </div>
+    </div>
+    <div class="exam-card">
+      <h3>Defence Exams</h3>
+      <p>NDA and other eligible defence entrance and recruitment exams</p>
+      <div class="exam-actions">
+        <button class="material-btn" onclick="openExamMaterial('Defence Exams')">Study Material</button>
+        <a class="inquiry-btn" href="https://wa.me/919653063675?text=Hello%20PGS%2C%20I%20want%20details%20about%20Defence%20exam%20preparation." target="_blank" rel="noopener">WhatsApp Enquiry</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="pgs-heading" style="margin-top:30px;">
+    <p><strong>Pratik Global Studies (PGS)</strong> – Learn, Practice and Prepare.</p>
+    <a class="whatsapp-main" href="https://wa.me/919653063675?text=Hello%20PGS%2C%20please%20share%20details%20about%20government%20competitive%20exam%20courses." target="_blank" rel="noopener">Enquire on WhatsApp: 9653063675</a>
+  </div>
+</section>
+<script>
+
+/* IMAGE SLIDER */
+
+let currentSlide = 0;
+const slides = document.querySelectorAll(".slider img");
+
+function showSlide(index) {
+  slides.forEach(slide => slide.classList.remove("active"));
+
+  currentSlide = (index + slides.length) % slides.length;
+
+  slides[currentSlide].classList.add("active");
+}
+
+function changeSlide(direction) {
+  showSlide(currentSlide + direction);
+}
+
+setInterval(() => {
+  showSlide(currentSlide + 1);
+}, 4000);
+
+/* PGS COURSE MATERIAL LINKS AND PASSWORDS */
+const courseMaterials = {
+  "B.Pharm 1st Semester": { url: "https://pratik-pharmacy.blogspot.com/2026/11/basic-of-python-programming-for.html", password: "12345" },
+  "B.Pharm 2nd Semester": { url: "ADD_PDF_OR_BLOGGER_URL_HERE", password: "12345" },
+  "B.Pharm 3rd Semester": { url: "ADD_PDF_OR_BLOGGER_URL_HERE", password: "12345" },
+  "B.Pharm 4th Semester": { url: "ADD_PDF_OR_BLOGGER_URL_HERE", password: "12345" },
+  "B.Pharm 5th Semester": { url: "ADD_PDF_OR_BLOGGER_URL_HERE", password: "12345" },
+  "B.Pharm 6th Semester": { url: "ADD_PDF_OR_BLOGGER_URL_HERE", password: "12345" },
+  "B.Pharm 7th Semester": { url: "ADD_PDF_OR_BLOGGER_URL_HERE", password: "12345" },
+  "B.Pharm 8th Semester": { url: "ADD_PDF_OR_BLOGGER_URL_HERE", password: "12345" },
+  "D.Pharm First Year": { url: "ADD_PDF_OR_BLOGGER_URL_HERE", password: "12345" },
+  "D.Pharm Second Year": { url: "ADD_PDF_OR_BLOGGER_URL_HERE", password: "12345" }
+};
+
+function openCourseMaterial(courseName) {
+  const material = courseMaterials[courseName];
+
+  if (!material || !material.url || material.url === "ADD_PDF_OR_BLOGGER_URL_HERE") {
+    alert("इस Course का PDF या Blogger लिंक अभी नहीं जोड़ा गया है।");
+    return;
+  }
+
+  const enteredPassword = prompt(courseName + " का Password डालें:");
+  if (enteredPassword === null) return;
+
+  if (enteredPassword === material.password) {
+    window.open(material.url, "_blank", "noopener");
+  } else {
+    alert("गलत Password! कृपया सही Password डालें।");
+  }
+}
+
+/* GOVERNMENT COMPETITIVE EXAM MATERIAL LINKS AND PASSWORDS
+   Add your Blogger URL or direct PDF URL in the url field.
+   Change the password for each exam in the password field.
+*/
+const examMaterials = {
+  "RRB NTPC": { url: "ADD_PDF_OR_BLOGGER_URL_HERE", password: "12345" },
+  "RRB Group D": { url: "ADD_PDF_OR_BLOGGER_URL_HERE", password: "12345" },
+  "RRB ALP": { url: "ADD_PDF_OR_BLOGGER_URL_HERE", password: "12345" },
+  "RRB Technician": { url: "ADD_PDF_OR_BLOGGER_URL_HERE", password: "12345" },
+  "RRB JE": { url: "ADD_PDF_OR_BLOGGER_URL_HERE", password: "12345" },
+  "RPF Constable / SI": { url: "ADD_PDF_OR_BLOGGER_URL_HERE", password: "12345" },
+  "SSC CGL": { url: "ADD_PDF_OR_BLOGGER_URL_HERE", password: "12345" },
+  "SSC CHSL": { url: "ADD_PDF_OR_BLOGGER_URL_HERE", password: "12345" },
+  "SSC MTS": { url: "ADD_PDF_OR_BLOGGER_URL_HERE", password: "12345" },
+  "Banking Exams": { url: "ADD_PDF_OR_BLOGGER_URL_HERE", password: "12345" },
+  "UP Government Exams": { url: "ADD_PDF_OR_BLOGGER_URL_HERE", password: "12345" },
+  "Defence Exams": { url: "ADD_PDF_OR_BLOGGER_URL_HERE", password: "12345" }
+};
+
+function openExamMaterial(examName) {
+  const material = examMaterials[examName];
+
+  if (!material || !material.url || material.url === "ADD_PDF_OR_BLOGGER_URL_HERE") {
+    alert("इस Exam का PDF या Blogger लिंक अभी नहीं जोड़ा गया है।");
+    return;
+  }
+
+  const enteredPassword = prompt(examName + " का Password डालें:");
+  if (enteredPassword === null) return;
+
+  if (enteredPassword === material.password) {
+    window.open(material.url, "_blank", "noopener");
+  } else {
+    alert("गलत Password! कृपया सही Password डालें।");
+  }
+}
+
+/* WHATSAPP COURSE ENQUIRY */
+const whatsappNumber = "919653063675";
+function enrollPGS(courseName) {
+  const message = "Hello PGS, I want details about " + courseName + " study material.";
+  const whatsappURL = "https://wa.me/" + whatsappNumber + "?text=" + encodeURIComponent(message);
+  window.open(whatsappURL, "_blank", "noopener");
+}
+</script>
+</body>
+</html>

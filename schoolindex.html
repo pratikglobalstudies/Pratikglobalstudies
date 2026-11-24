@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>S.S. Junior High School | Sidhawan, Jaunpur</title>
+<meta name="description" content="S.S. Junior High School, Sidhawan, Jaunpur. School education and Pratik Global Studies Pharmacy online courses.">
+
+<style>
+:root {
+  --blue: #0d47a1;
+  --light-blue: #1976d2;
+  --dark: #0d1b2a;
+  --yellow: #ffeb3b;
+  --red: #d32f2f;
+  --white: #ffffff;
+  --light: #f4f7fb;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #222;
+  background: var(--light);
+}
+
+a {
+  text-decoration: none;
+}
+
+header {
+  background: var(--blue);
+  color: white;
+  padding: 15px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.school-logo h1 {
+  font-size: 25px;
+}
+
+.school-logo p {
+  font-size: 13px;
+  color: var(--yellow);
+}
+
+nav {
+  background: var(--dark);
+  padding: 12px 5%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 22px;
+}
+
+nav a {
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+nav a:hover {
+  color: var(--yellow);
+}
+
+.hero {
+  background: linear-gradient(120deg, #0d47a1, #1976d2);
+  color: white;
+  text-align: center;
+  padding: 55px 20px;
+}
+
+.hero h2 {
+  font-size: 34px;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  max-width: 700px;
+  margin: auto;
+}
+
+.recognized {
+  display: inline-block;
+  background: var(--yellow);
+  color: #222;
+  padding: 7px 18px;
+  border-radius: 20px;
+  font-weight: bold;
+  margin-top: 18px;
+}
+
+.slider {
+  max-width: 1100px;
+  margin: 25px auto;
+  padding: 0 15px;
+  position: relative;
+}
+
+.slider img {
+  width: 100%;
+  height: 430px;
+  object-fit: cover;
+  border-radius: 12px;
+  display: none;
+}
+
+.slider img.active {
+  display: block;
+}
+
+.slider-btn {
+  position: absolute;
+  top: 45%;
+  background: rgba(0,0,0,.65);
+  color: white;
+  border: none;
+  padding: 12px 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+.prev {
+  left: 25px;
+}
+
+.next {
+  right: 25px;
+}
+
+section {
+  padding: 45px 6%;
+  scroll-margin-top: 20px;
+}
+
+.section-title {
+  text-align: center;
+  color: var(--blue);
+  font-size: 28px;
+  margin-bottom: 25px;
+}
+
+.about {
+  background: white;
+  text-align: center;
+}
+
+.about p {
+  max-width: 850px;
+  margin: auto;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  padding: 22px;
+  border-radius: 12px;
+  box-shadow: 0 3px 12px rgba(0,0,0,.08);
+  text-align: center;
+}
+
+.card h3 {
+  color: var(--blue);
+  margin-bottom: 8px;
+}
+
+.person-card {
+  background: white;
+  text-align: center;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 3px 12px rgba(0,0,0,.08);
+}
+
+.person-card img {
+  width: 145px;
+  height: 145px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 12px;
+}
+
+.person-card h3 {
+  color: var(--blue);
+}
+
+.contact {
+  background: white;
+  text-align: center;
+}
+
+.contact p {
+  margin: 8px;
+}
+
+.contact a {
+  color: var(--blue);
+  font-weight: bold;
+}
+
+/* PGS COURSES */
+
+.pgs-section {
+  background: #eef4ff;
+}
+
+.pgs-heading {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.pgs-heading h2 {
+  color: var(--blue);
+  font-size: 32px;
+}
+
+.pgs-heading p {
+  color: #555;
+}
+
+.pgs-brand {
+  background: linear-gradient(120deg, #0d1b2a, #0d47a1);
+  color: white;
+  text-align: center;
+  padding: 35px 15px;
+  border-radius: 14px;
+  margin-bottom: 30px;
+}
+
+.pgs-brand h2 {
+  font-size: 30px;
+  color: var(--yellow);
+}
+
+.course-category {
+  margin: 35px 0 18px;
+  color: var(--blue);
+  border-left: 5px solid var(--yellow);
+  padding-left: 12px;
+}
+
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 18px;
+}
+
+.course-card {
+  background: white;
+  border-radius: 12px;
+  padding: 22px 16px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,.08);
+  border-top: 4px solid var(--light-blue);
+}
+
+.course-card h3 {
+  color: var(--blue);
+  margin-bottom: 8px;
+}
+
+.course-card p {
+  color: #555;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.enroll-btn {
+  display: inline-block;
+  border: none;
+  background: #128c45;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.enroll-btn:hover {
+  background: #086b32;
+}
+
+.whatsapp-main {
+  display: inline-block;
+  background: #128c45;
+  color: white;
+  padding: 12px 22px;
+  border-radius: 7px;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+footer {
+  background: var(--dark);
+  color: white;
+  text-align: center;
+  padding: 25px 15px;
+}
+
+footer a {
+  color: var(--yellow);
+}
+
+@media(max-width: 600px) {
+  header {
+    justify-content: center;
+    text-align: center;
+  }
+
+  nav {
+    gap: 13px;
+  }
+
+  nav a {
+    font-size: 12px;
+  }
+
+  .hero h2 {
+    font-size: 25px;
+  }
+
+  .slider img {
+    height: 240px;
+  }
+
+  .section-title {
+    font-size: 24px;
+  }
+
+  .pgs-heading h2 {
+    font-size: 25px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="school-logo">
+    <h1>श्रीनाथ सुखदेई जूनियर हाई स्कूल</h1>
+    <p>S.S. JUNIOR HIGH SCHOOL</p>
+  </div>
+  <div>
+    <strong>SIDHAWAN, JAUNPUR</strong>
+  </div>
+</header>
+
+<!-- NAVIGATION -->
+<nav>
+  <a href="../">PGS Main Home</a>
+  <a href="#home">Home</a>
+  <a href="#about">About</a>
+  <a href="#management">Management</a>
+  <a href="#facilities">Facilities</a>
+  <a href="#faculty">Faculty</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<!-- HOME -->
+<div class="hero" id="home">
+  <h2>Welcome to S.S. Junior High School</h2>
+  <p>Empowering Minds, Shaping Futures</p>
+  <span class="recognized">Recognized by UP Board</span>
+</div>
+
+<!-- IMAGE SLIDER -->
+<div class="slider">
+  <img class="active"
+  src="https://blogger.googleusercontent.com/img/a/AVvXsEiLlAh-ONksg8jmKN1-6RNecN-Dz56RQAHEVAIr5HlUYdThq_XOEAGIuH4-qDR_zlp5avAqyGAEKcZQFzhMELFUBDXs4Hb9qZsrPtORbjAmvdUIoupq1H6qm_7PtqglW4S5PaeqpsC-B_ZtaC394wXCuOhAq3F3Le_QqyhJT__fq-Nn1vy6XtpsLToLDjTI=w1600"
+  alt="School building">
+
+  <img
+  src="https://blogger.googleusercontent.com/img/a/AVvXsEhu11VQEELB2PZsiqBJONApC7Ko5-YfO0lbn5AnP8w0pBDZ2LouCxZnG1efeGDh7nsaBw2jn1OZKPswbMDgnV-igi9doZhARiq-VT9XpVabAoOEdYjdEsX9pbnBLS4JY9BpOXQylaX7ZyFbZRQwBROWyX3b8pcqFGf171NHlNZFTUI0vqSL7ipXC5Ff4-qw=s1600"
+  alt="School activities">
+
+  <img
+  src="https://blogger.googleusercontent.com/img/a/AVvXsEhJlS7QJoLBMxreZIAcdZNaPAnv-P2YMmUI2u3pNIkeIKasZvZv3pkX4EFmg_ARWOM_1BQuCVD9eX2JbV6qbzkF9fterYoMwegavo7rLz50VyuOB16l1C006jjbhPL0SkIkhohvqxoLN-Odq-P5AmaZM1_hVqMyLfIPUhgmb-1x81yWb8COgM9tDf64xfdA=s1600"
+  alt="School campus">
+
+  <button class="slider-btn prev" onclick="changeSlide(-1)">❮</button>
+  <button class="slider-btn next" onclick="changeSlide(1)">❯</button>
+</div>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <h2 class="section-title">About Our School</h2>
+  <p>
+    S.S. Junior High School is committed to providing quality education
+    and building a strong foundation for students. Our aim is to develop
+    knowledge, discipline, confidence and good values among students.
+    We provide an educational environment where every student gets
+    an opportunity to learn and grow.
+  </p>
+  <br>
+  <h3>Nursery to Class 8th</h3>
+  <p>Sidhawan, Pachwal, Jaunpur, Uttar Pradesh - 222203</p>
+</section>
+
+<!-- MANAGEMENT -->
+<section id="management">
+  <h2 class="section-title">School Management</h2>
+  <div class="cards">
+
+    <div class="person-card">
+      <img
+      src="https://blogger.googleusercontent.com/img/a/AVvXsEgnift9J1nVFCoKdrng8rLsb7uHxKCq_wNO8ccxaI9rYeOSbK_gXMfsPDOdxQpamTmPKCgCU9qbTwasiEj-Tu3uWVJ-wEzHDSH0AX2EGxulFple1RtXXpoODM1I2mSwWN8tWO_2nKg8Du8wqsgE0yRhkFgHg7A8OUE7H7UU355XSmLOugjbkCzKlsG5kc9I=w400-h400"
+      alt="Manager">
+      <h3>Jay Prakash Yadav</h3>
+      <p>Manager</p>
+    </div>
+
+    <div class="person-card">
+      <img
+      src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiJF53Yu_KbOkGAmc34jqChxuIwoyqiidV3nqTR1MiVbJX7008-KJWhL6yLMurKe4wrQa4zNcA1etf00IFVKpNSTu-vDiNq33OHbge1Ao60xydjP-9fB42g6ejyzwIp51zugmS99RuzG_7chtLuMuOe_epfJDs6TrDD1bt_Q4rV3ivHpCt9tkIaSNFYVEvy/w400-h400/1000285977.png"
+      alt="Vice Principal">
+      <h3>Vidhan Chard Sir</h3>
+      <p>Vice Principal</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- FACILITIES -->
+<section id="facilities" style="background:white;">
+  <h2 class="section-title">Our Facilities</h2>
+  <div class="cards">
+
+    <div class="card">
+      <h3>Smart Classes</h3>
+      <p>Technology-based learning for better understanding.</p>
+    </div>
+
+    <div class="card">
+      <h3>Quality Education</h3>
+      <p>Focus on academic learning and student development.</p>
+    </div>
+
+    <div class="card">
+      <h3>Experienced Faculty</h3>
+      <p>Dedicated teachers to guide and support students.</p>
+    </div>
+
+    <div class="card">
+      <h3>Co-curricular Activities</h3>
+      <p>Activities for confidence and overall development.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- FACULTY -->
+<section id="faculty">
+  <h2 class="section-title">Our Faculty</h2>
+  <div class="cards">
+
+    <div class="person-card">
+      <img
+      src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhkhad4rsPX4kp9ecaLvqF2mdiqkXdq60QGRpsla87hZ3bnxPpduLABZuCMybpwBR012ZD-h3ZkEjgNvsmdIMxlsqxrP_vfM5j5BWTyhCcRWnRTjUx3wHBsmX1DGkRvYaytV9WF3zJ-H6smp7Kzu9quToUAjEKzNOqdOaj2yaKWV1Wqc2AzDdbnkO8bw40-/w400-h400/1000285947.png"
+      alt="Sandhya Yadav">
+      <h3>Sandhya Yadav</h3>
+      <p>Faculty</p>
+    </div>
+
+    <div class="person-card">
+      <img
+      src="https://blogger.googleusercontent.com/img/a/AVvXsEibx0jzWt-f6vVAK2U-Fe5Q_RvP4DXm8ptyKkASC8aRgVFmDYAwfuJHEaTC5UKbqHx6ScvRQhr5l61SWwjauTr6igzDU-w69P15TMM14fYSYdl2f_TQeClWiSwnSW_D_Zo51nfhNcUY9TNd1DOc8nS0bVwHwtAn_p983T-zdUN96QODBvt494mYkW88TOgE=w400-h400"
+      alt="Pratik Kumar">
+      <h3>Pratik Kumar</h3>
+      <p>Faculty</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- PGS PHARMACY COURSES -->
+
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <h2 class="section-title">Contact Us</h2>
+
+  <p><strong>S.S. Junior High School</strong></p>
+  <p>Sidhawan, Pachwal, Jaunpur, Uttar Pradesh - 222203</p>
+
+  <p>
+    Phone:
+    <a href="tel:+918874311825">+91 8874311825</a>
+  </p>
+
+  <p>
+    Phone:
+    <a href="tel:+919653063675">+91 9653063675</a>
+  </p>
+
+  <p>
+    <strong>PGS Pharmacy Courses:</strong>
+    <a href="https://wa.me/919653063675" target="_blank" rel="noopener">
+      WhatsApp 9653063675
+    </a>
+  </p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <h3>S.S. Junior High School</h3>
+  <p>Empowering Minds, Shaping Futures</p>
+  <p>Pratik Global Studies – PGS Pharmacy Education</p>
+  <p>© 2026 All Rights Reserved.</p>
+</footer>
+
+<script>
+
+/* IMAGE SLIDER */
+
+let currentSlide = 0;
+const slides = document.querySelectorAll(".slider img");
+
+function showSlide(index) {
+  slides.forEach(slide => slide.classList.remove("active"));
+
+  currentSlide = (index + slides.length) % slides.length;
+
+  slides[currentSlide].classList.add("active");
+}
+
+function changeSlide(direction) {
+  showSlide(currentSlide + direction);
+}
+
+setInterval(() => {
+  showSlide(currentSlide + 1);
+}, 4000);
+
+/* PGS COURSE MATERIAL LINKS AND PASSWORDS */
+const courseMaterials = {
+  "B.Pharm 1st Semester": { url: "https://pratik-pharmacy.blogspot.com/2026/11/basic-of-python-programming-for.html", password: "12345" },
+  "B.Pharm 2nd Semester": { url: "ADD_PDF_OR_BLOGGER_URL_HERE", password: "12345" },
+  "B.Pharm 3rd Semester": { url: "ADD_PDF_OR_BLOGGER_URL_HERE", password: "12345" },
+  "B.Pharm 4th Semester": { url: "ADD_PDF_OR_BLOGGER_URL_HERE", password: "12345" },
+  "B.Pharm 5th Semester": { url: "ADD_PDF_OR_BLOGGER_URL_HERE", password: "12345" },
+  "B.Pharm 6th Semester": { url: "ADD_PDF_OR_BLOGGER_URL_HERE", password: "12345" },
+  "B.Pharm 7th Semester": { url: "ADD_PDF_OR_BLOGGER_URL_HERE", password: "12345" },
+  "B.Pharm 8th Semester": { url: "ADD_PDF_OR_BLOGGER_URL_HERE", password: "12345" },
+  "D.Pharm First Year": { url: "ADD_PDF_OR_BLOGGER_URL_HERE", password: "12345" },
+  "D.Pharm Second Year": { url: "ADD_PDF_OR_BLOGGER_URL_HERE", password: "12345" }
+};
+
+function openCourseMaterial(courseName) {
+  const material = courseMaterials[courseName];
+
+  if (!material || !material.url || material.url === "ADD_PDF_OR_BLOGGER_URL_HERE") {
+    alert("इस Course का PDF या Blogger लिंक अभी नहीं जोड़ा गया है।");
+    return;
+  }
+
+  const enteredPassword = prompt(courseName + " का Password डालें:");
+  if (enteredPassword === null) return;
+
+  if (enteredPassword === material.password) {
+    window.open(material.url, "_blank", "noopener");
+  } else {
+    alert("गलत Password! कृपया सही Password डालें।");
+  }
+}
+
+/* WHATSAPP COURSE ENQUIRY */
+const whatsappNumber = "919653063675";
+function enrollPGS(courseName) {
+  const message = "Hello PGS, I want details about " + courseName + " study material.";
+  const whatsappURL = "https://wa.me/" + whatsappNumber + "?text=" + encodeURIComponent(message);
+  window.open(whatsappURL, "_blank", "noopener");
+}
+</script>
+
+</body>
+</html>
